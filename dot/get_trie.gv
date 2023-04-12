@@ -1,0 +1,32 @@
+digraph G {
+    graph [fontname="Helvetica"]
+    node [fontname="Helvetica", shape=box]
+    edge [fontname="Helvetica"]
+
+    a [label="body of text"]
+    b [label="list of sentences"]
+    c [label="list of lists of words"]
+    d [label="trie builder"]
+
+    a -> b [label="split into"]
+    b -> c [label="split into"]
+    c -> d [label="pass to"]
+
+    e [label="trie builder"]
+    f [label="no sentences left"]
+    g [label="end build"]
+    h [label="get first word from each sentence"]
+    i [label="create a hashmap"]
+    j [label="add the first words to the hashmap as keys"]
+    k [label="set the value as a list of the sentences\n with the first word equal to the key"]
+    l [label="remove the first word from each sentence"]
+    m [label=""]
+
+    e -> f [label="checks if"]
+    f -> g [label="if true"]
+    f -> h [label="if false"]
+    h -> i [label="then"]
+    i -> j [label="then"]
+    j -> k [label="then for each key"]
+    k -> l [label="then for each sentence"]
+}
